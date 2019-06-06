@@ -1,0 +1,64 @@
+﻿<Window x:Class="Catalog_Smartphone.View.InfoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Catalog_Smartphone.ViewModel"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen" MinHeight="300" MinWidth="300"  Icon="..\Images\Icons\infoicon.ico"
+        Title="Информация о телефоне" Height="450" Width="800" Style ="{DynamicResource WindowStyle}" >
+    <Window.DataContext>
+        <local:InfoViewModel></local:InfoViewModel>
+    </Window.DataContext>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Image  Source="{Binding Phone.Image}" Width="100" HorizontalAlignment="Left" Margin="15"/>
+        <TextBlock Style="{StaticResource tb2}" Grid.Column="1" DockPanel.Dock="Right" Margin="0 15" TextWrapping="Wrap"
+                 FontSize="16"  Text="{Binding Phone.Descript}"></TextBlock>
+        <WrapPanel Grid.Row="1" Grid.ColumnSpan="2">
+            <StackPanel Style="{StaticResource sp}">
+                <Label Content="{DynamicResource _manufact}"></Label>
+                <TextBlock Style="{StaticResource tb2}" Text="{Binding Phone.Manufact}"></TextBlock>
+            </StackPanel>
+            <StackPanel Style="{StaticResource sp}">
+                <Label Content="{DynamicResource _model}"/>
+                <TextBlock Style="{StaticResource tb2}" Text="{Binding Phone.Model}"></TextBlock>
+            </StackPanel >
+            <StackPanel Style="{StaticResource sp}">
+                <Label Content="{DynamicResource _price}"/>
+                <TextBlock Style="{StaticResource tb2}" Text="{Binding Phone.Price}"></TextBlock>
+            </StackPanel>
+            <StackPanel Style="{StaticResource sp}">
+                <Label Content="{DynamicResource _os}"/>
+                <TextBlock Style="{StaticResource tb2}" Text="{Binding Phone.Os}"></TextBlock>
+            </StackPanel>
+            <StackPanel Style="{StaticResource sp}">
+                <Label Content="{DynamicResource _memory}"/>
+                <TextBlock Style="{StaticResource tb2}" Text="{Binding Phone.Memory}"></TextBlock>
+            </StackPanel>
+            <StackPanel Style="{StaticResource sp}">
+                <Label Content="{DynamicResource _ram}"/>
+                <TextBlock Style="{StaticResource tb2}" Text="{Binding Phone.Ram}"></TextBlock>
+            </StackPanel>
+            <StackPanel Style="{StaticResource sp}">
+                <Label Content="{DynamicResource _cam}"/>
+                <TextBlock Style="{StaticResource tb2}" Text="{Binding Phone.Cam}"></TextBlock>
+            </StackPanel>
+            <StackPanel Style="{StaticResource sp}">
+                <Label Content="{DynamicResource _diagonal}"/>
+                <TextBlock Style="{StaticResource tb2}" Text="{Binding Phone.Screen}"></TextBlock>
+            </StackPanel>
+            <StackPanel Style="{StaticResource sp}">
+                <Label Content="{DynamicResource _battery}"/>
+                <TextBlock Style="{StaticResource tb2}" Text="{Binding Phone.Battery}"></TextBlock>
+            </StackPanel>
+        </WrapPanel>
+    </Grid>
+</Window>
